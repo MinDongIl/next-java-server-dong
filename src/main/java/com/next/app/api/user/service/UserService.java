@@ -25,11 +25,14 @@ public class UserService {
     public Optional<User> getUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
-    
+
     public User createUser(User user) {
         if (userRepository.existsByEmail(user.getEmail())) {
             throw new RuntimeException("이미 존재하는 이메일입니다: " + user.getEmail());
         }
+
+//        log.info("Creating user: " + user.getEmail());
+
         return userRepository.save(user);
     }
     
