@@ -1,7 +1,6 @@
 package com.next.app.api.user.entity;
 
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 
 @Entity
